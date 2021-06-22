@@ -27,9 +27,7 @@ public class ContactService {
         // in caso negativo si lancerò il costruttore di contact con il customer
         Iterator<Contact> iterator = getContacts().iterator();
         while(iterator.hasNext()){
-            if(iterator != null){
-                
-            }
+            
         }
         return null;
     }
