@@ -8,11 +8,19 @@ public class Contact {
     private String email;
     private Customer customer;
 
-    public Contact(String firstName, String lastName, String phone, String email){
+    public Contact(String firstName, String lastName, String phone, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
         this.email = email;
     }
-    
+
+    public Contact(String firstName, String lastName, String phone, String email, Customer customer) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phone = phone;
+        this.email = email;
+        this.customer = customer;
+    }
+
 }
