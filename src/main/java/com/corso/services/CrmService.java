@@ -9,11 +9,11 @@ public class CrmService {
     private static CrmService crmService;
     private ContactService contactService;
     private CustomerService customerService;
-    private Set<Contact> contacts;
+    private List<Contact> contacts;
     private Map<String, Customer> customers;
 
     private CrmService() {
-        this.contacts = new HashSet<>();
+        this.contacts = new ArrayList<>();
         this.customers = new HashMap<>();
 
     }
@@ -35,7 +35,7 @@ public class CrmService {
         return customerService;
     }
 
-    public Set<Contact> getContacts() {
+    public List<Contact> getContacts() {
         return contacts;
     }
 

@@ -1,11 +1,11 @@
 package com.corso.models;
 
 public class Customer {
-    
+
     private String name;
     private String pIva;
 
-    public Customer(String name, String pIva){
+    public Customer(String name, String pIva) {
         this.name = name;
         this.pIva = pIva;
     }
@@ -35,5 +35,7 @@ public class Customer {
         return true;
     }
 
-    
+    public String getName() {
+        return name;
+    }
 }
