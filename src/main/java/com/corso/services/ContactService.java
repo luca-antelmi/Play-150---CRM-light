@@ -21,15 +21,24 @@ public class ContactService {
     }
 
     public Contact contactRegister(String firstName, String lastName, String phone, String email, Customer customer) {
-        // prima di fare la registrazione del contact bisogna vedere se il customer è
-        // null,
-        // in caso affermativo si lancerà il costruttore di contact senza il customer
-        // in caso negativo si lancerò il costruttore di contact con il customer
+        Contact contact;
+        if (customer == null)
+            contact = new Contact(firstName, lastName, phone, email);
+        else
+            contact = new Contact(firstName, lastName, phone, email, customer);
         Iterator<Contact> iterator = getContacts().iterator();
-        while(iterator.hasNext()){
-            
+
+        while (iterator.hasNext()) {
+            Contact contactToIterate = iterator.next();
+            if (comparator.compare(contactToIterate, contact) == 1) { // iterator.next e contact sono uguali
+                if (contact.getCustomer() == null && contactToIterate.getCustomer() != null)
+                    contact.setCustomer(contactToIterate.getCustomer());
+                iterator.remove(); // cancello il vecchio contact dalla lista di tutti i contact
+                break; // esco dal ciclo poiche ho trovato il vecchio contact e l'ho eliminato
+            }
         }
-        return null;
+        getContacts().add(contact);
+        return contact;
     }
 
     private List<Contact> getContacts() {

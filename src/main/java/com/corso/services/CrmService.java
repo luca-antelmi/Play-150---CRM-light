@@ -28,19 +28,19 @@ public class CrmService {
     }
 
     public ContactService getContactService() {
-        return contactService;
+        return this.contactService;
     }
 
     public CustomerService getCustomerService() {
-        return customerService;
+        return this.customerService;
     }
 
     public List<Contact> getContacts() {
-        return contacts;
+        return this.contacts;
     }
 
     public Map<String, Customer> getCustomers() {
-        return customers;
+        return this.customers;
     }
 
 }
