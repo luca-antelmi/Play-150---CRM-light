@@ -2,10 +2,12 @@ package com.corso.services;
 
 import com.corso.models.Contact;
 import com.corso.models.Customer;
+import com.corso.models.dtos.ContactDTO;
+import com.corso.services.interfaces.IContactService;
 import com.corso.utilities.ContactsComparator;
 import java.util.*;
 
-public class ContactService {
+public class ContactService implements IContactService {
 
     private static ContactService contactService;
     private ContactsComparator comparator;
@@ -20,7 +22,7 @@ public class ContactService {
         return contactService;
     }
 
-    public Contact contactRegister(String firstName, String lastName, String phone, String email, Customer customer) {
+    public ContactDTO contactRegister(String firstName, String lastName, String phone, String email, Customer customer) {
         Contact contact;
         if (customer == null)
             contact = new Contact(firstName, lastName, phone, email);
@@ -38,11 +40,11 @@ public class ContactService {
             }
         }
         getContacts().add(contact);
-        return contact;
+        return new ContactDTO(email, phone);
     }
 
     private List<Contact> getContacts() {
-        return CrmService.getInstance().getContacts();
+        return PortalService.getInstance().getContacts();
     }
 
 }

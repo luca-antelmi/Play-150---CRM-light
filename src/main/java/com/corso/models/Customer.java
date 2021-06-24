@@ -42,4 +42,10 @@ public class Customer {
     public String getPIva() {
         return this.pIva;
     }
+
+    @Override
+    public String toString() {
+        String str = "[Customer]: " + "\n" + "\n" + "> Customer Name: " + name + "\n" + "> Customer PIva: " + pIva;
+        return str;
+    }
 }

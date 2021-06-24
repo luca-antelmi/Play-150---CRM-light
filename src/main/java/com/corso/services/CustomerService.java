@@ -1,9 +1,10 @@
 package com.corso.services;
 
 import com.corso.models.Customer;
+import com.corso.services.interfaces.ICustomerService;
 import java.util.*;
 
-public class CustomerService {
+public class CustomerService implements ICustomerService {
 
     private static CustomerService customerService;
 
@@ -29,7 +30,7 @@ public class CustomerService {
     }
 
     private Map<String, Customer> getCustomers() {
-        return CrmService.getInstance().getCustomers();
+        return PortalService.getInstance().getCustomers();
 
     }
 

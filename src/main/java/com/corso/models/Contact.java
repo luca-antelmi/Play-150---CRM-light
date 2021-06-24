@@ -46,4 +46,14 @@ public class Contact {
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
+
+    @Override
+    public String toString() {
+        String str = "[Contact]: " + "\n" + "\n" + "> First Name: " + firstName + "\n" + "> Last Name: " + lastName + "\n"
+                + "> Phone: " + phone + "\n" + "> Email: " + email;
+        if (customer != null)
+            str = str + "\n" + "> Customer Name: " + customer.getName() + "\n" + "> Customer PIva: " + customer.getPIva();
+        return str;
+    }
+
 }
