@@ -4,10 +4,11 @@ import com.corso.exceptions.InvalidCredentialsException;
 import com.corso.models.Customer;
 import com.corso.models.dtos.ContactDTO;
 import com.corso.services.PortalService;
+import com.corso.services.interfaces.IPortalService;
 
 public class ContactController {
 
-    private static final PortalService portalService = PortalService.getInstance();
+    private static final IPortalService portalService = PortalService.getInstance();
 
     public ContactDTO register(String firstName, String lastName, String phone, String email, String name, String pIva)
             throws InvalidCredentialsException {

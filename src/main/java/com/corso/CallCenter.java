@@ -4,6 +4,7 @@ import com.corso.controllers.ContactController;
 import com.corso.models.Contact;
 import com.corso.models.Customer;
 import com.corso.services.PortalService;
+import com.corso.services.interfaces.IPortalService;
 
 public class CallCenter {
 
@@ -22,7 +23,7 @@ public class CallCenter {
 
         System.out.println("Stampa dei primi contact inseriti nel db e relativi customer");
         System.out.println();
-        PortalService portal = PortalService.getInstance();
+        IPortalService portal = PortalService.getInstance();
 
         for (Contact item : portal.getContacts()) {
             System.out.println(item.toString());
